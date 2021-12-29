@@ -1,0 +1,38 @@
+{
+  "name": "dblog",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.6",
+    "@apollo/react-hooks": "^4.0.0",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "apollo-boost": "^0.4.9",
+    "apollo-link": "^1.2.14",
+    "apollo-link-error": "^1.1.13",
+    "apollo-server": "^3.5.0",
+    "graphql": "^16.2.0",
+    "react": "^17.0.2",
+    "react-apollo": "^3.1.5",
+    "react-dom": "^17.0.2",
+    "react-markdown": "^7.1.1",
+    "react-moment": "^1.1.1",
+    "react-router-dom": "^6.2.1",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.19",
+    "@vitejs/plugin-react": "^1.0.7",
+    "react": "^17.0.33",
+    "react-dom": "^17.0.10",
+    "typescript": "^4.5.4",
+    "vite": "^2.7.2"
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  }
+}
