@@ -10,6 +10,7 @@ const QueryPosts = () => {
   return (
     <>
       {loading && <p>Loading ...</p>}
+      
       {data ? <RenderPosts data={data.posts.data} /> : <p>pleasea reload</p>}
     </>
   );

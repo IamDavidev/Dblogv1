@@ -64,13 +64,13 @@ const Navbar = () => {
                 <NavLink to="/dblog">Home</NavLink>
               </li>
               <li>
-                <NavLink to="/about">about</NavLink>
+                <NavLink to="/about">About</NavLink>
               </li>
             </ul>
           </div>
           <div className="navSearch">
             <label>
-              <NavLink to="/search">search</NavLink>
+              <NavLink to="/search">Search</NavLink>
             </label>
           </div>
         </div>

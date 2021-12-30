@@ -9,6 +9,7 @@ export const SqueryPosts = gql`
           title
           content
           date
+          description
           categories {
             data {
               id
@@ -32,4 +33,3 @@ export const SqueryPosts = gql`
   }
 `;
 
-export {};
