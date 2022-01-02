@@ -8,18 +8,13 @@ export const GET_QUERY_ALL_POSTS = gql`
       data {
         id
         attributes {
+          uid
           title
+          Description
           content
           date
-          image {
-            data {
-              id
-              attributes {
-                name
-                formats
-              }
-            }
-          }
+          createdAt
+          Image
         }
       }
     }
@@ -32,15 +27,18 @@ export const GET_QUERY_POSTS = gql`
       data {
         id
         attributes {
+          uid
           title
-          content
+          Description
           date
-          image {
+          content
+          createdAt
+          Image
+          types {
             data {
               id
               attributes {
                 name
-                formats
               }
             }
           }

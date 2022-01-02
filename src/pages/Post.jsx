@@ -4,8 +4,21 @@ import { GET_QUERY_POSTS, URI_BACKEND } from '../Utils/SchemasQueries';
 import Markdown from 'react-markdown';
 import { useMemo } from 'react';
 import styled from 'styled-components';
-// import styled from 'components-styled';
+import { AppTheme } from '../mainStyled';
 const StyledPost = styled.article`
+  margin: 0;
+  padding: 1rem;
+  .time {
+    width: 100%;
+    text-align: right;
+    color: ${AppTheme.colors.rosee};
+  }
+  h1 {
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0.4rem 0;
+    color: ${AppTheme.colors.green};
+  }
   img {
     width: 60%;
     object-fit: cover;
@@ -13,6 +26,17 @@ const StyledPost = styled.article`
   }
   .imgPost {
     width: 100%;
+  }
+  pre {
+    max-width: 100%;
+    background-color: ${AppTheme.colors.black};
+    border-radius: 1rem;
+    padding: 1rem;
+    code {
+      font-size: 0.5rem;
+      font-weight: bold;
+      color: ${AppTheme.colors.rosee};
+    }
   }
 `;
 
@@ -30,15 +54,13 @@ const Post = () => {
         data.posts.data.map((post) => {
           return (
             <div key={post.id} className="containerPosts">
+              <div className="time">
+                <time>
+                  {new Date(post.attributes.createdAt).toLocaleDateString()}
+                </time>
+              </div>
               <h1>{post.attributes.title}</h1>
-              {post.attributes.image.data && (
-                <img
-                  src={`${URI_BACKEND}${post.attributes.image.data.attributes.formats.medium.url}`}
-                  alt={post.attributes.title}
-                  className="imgPost"
-                />
-              )}
-              <p>hola</p>
+              <img src={post.attributes.Image} alt="" />
               <Markdown>{post.attributes.content}</Markdown>
             </div>
           );

@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { AppTheme } from '../mainStyled';
 import dblognav from '../../assets/dblognav.svg';
 import { NavLink } from 'react-router-dom';
+import { AppTheme } from '../mainStyled';
 const Snavbar = styled.nav`
-  border-radius: 0px;
-background: ${AppTheme.colors.blue};
-  width: 100%;
+  border-radius: 50px;
+  background: #6183ab;
+  box-shadow: 20px 20px 60px #526f91, -20px -20px 60px #7097c5;
+  margin:1rem 0;
   ul {
     display: flex;
   }
@@ -43,11 +44,12 @@ background: ${AppTheme.colors.blue};
   .navSearch {
     a {
       padding: 0 1rem;
-      border-left: 3px solid #fff;
+      border-left: 3px solid #000000;
     }
   }
   .active {
-    color: #fff;
+    /* color: #fff; */
+    color: ${AppTheme.colors.green};
   }
 `;
 

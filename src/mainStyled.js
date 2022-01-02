@@ -19,19 +19,11 @@ export const AppStyled = createGlobalStyle`
 export const AppTheme = {
   colors: {
     first: '#6183AB',
-    second: '#8C9EBB',
-    third: '#9CB2CF',
-    fourth: '#C8DBEF',
-    text: '#00ADB5',
     ext: '#232B59',
     black: '#0C0B13',
-    blue: "#234BA8" ,
-
-  },
-  font: {
-    title: '3rem',
-    subtitle: '1.5rem',
-    text: '1rem',
+    blue: '#234BA8',
+    green:"#16D896",
+    rosee:'#CC21A3'
   },
 };
 
@@ -49,11 +41,16 @@ export const AppContainer = styled.section`
   padding: 0;
   main {
     margin: 1rem;
-    padding:1rem;
+    padding: 1rem;
     color: #fff;
     border-radius: 1.3rem;
-    background: #092A55;
-    box-shadow: inset -25px -25px 100px #08264d,
-            inset 25px 25px 100px #0a2e5d;
+    min-height: 600px;
+    min-width: 300px;
+    background: #092a55;
+    box-shadow: inset -25px -25px 100px #08264d, inset 25px 25px 100px #0a2e5d;
+  }
+  h1 {
+    width: 100%;
+    text-align: center;
   }
 `;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import dblog from '../../assets/dblog.svg';
 import { AppTheme } from '../mainStyled';
+import { URI_BACKEND } from '../Utils/SchemasQueries';
 const StyeleCardPreView = styled.section`
   border-radius: 2rem;
   backdrop-filter: blur(5px);
@@ -14,23 +15,35 @@ const StyeleCardPreView = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color:#fff;
+  margin:1rem  .3rem;
   img {
     width: 80%;
-    height: 150px;
+    border-radius: 1rem;
+    border: 1px solid ${AppTheme.colors.black};
     object-fit: cover;
   }
+h1{
+  text-align:center;
+  text-transform:uppercase;
+  padding:0;
+  margin:.3rem;
+  color:${AppTheme.colors.green};
+}
 `;
 
-const CardPreView = (props) => {
+const CardPreView = ({title,imgSrc,description}) => {
+  console.log(description);
   return (
     <StyeleCardPreView>
-      <img src={dblog} alt="" />
-      <h1>prew</h1>
+    <img src={imgSrc} alt={description} />
+      <h1>{title} </h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quas
-        corporis explicabo velit eius aspernatur mollitia distinctio aut iusto,
-        veniam, vitae magnam excepturi consequatur sit minima, nostrum quo
-        adipisci. Debitis.
+        {
+          description.length > 50
+            ? description.substring(0, 100) + '...'
+            : description
+        }
       </p>
     </StyeleCardPreView>
   );
