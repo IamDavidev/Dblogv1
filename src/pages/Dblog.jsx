@@ -1,13 +1,13 @@
-import styled from 'styled-components';
-import QueryPosts from '../Containers/QueryPosts';
+import CardPreView from '../Components/cardPreView';
+import RenderPosts from '../Components/RenderPosts';
 import { AppTheme } from '../mainStyled';
 
 const Dblog = () => {
-  console.log('Dblog');
   return (
     <>
-      <h1>Dblog render</h1>
-      <QueryPosts />
+      <h1> All Posts</h1>
+      {/* <RenderPosts /> */}
+      <CardPreView />
     </>
   );
 };

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { AppTheme } from '../mainStyled';
 import dblognav from '../../assets/dblognav.svg';
-import {  NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 const Snavbar = styled.nav`
-  background: ${AppTheme.colors.first};
+  border-radius: 0px;
+background: ${AppTheme.colors.blue};
   width: 100%;
   ul {
     display: flex;
@@ -14,11 +15,11 @@ const Snavbar = styled.nav`
     list-style: none;
     font-family: sans-serif;
   }
-  a{
+  a {
     color: #000;
-    text-decoration:none;
-    font-weight:bold;
-  } 
+    text-decoration: none;
+    font-weight: bold;
+  }
   .nav {
     display: flex;
     justify-content: space-between;
@@ -27,8 +28,8 @@ const Snavbar = styled.nav`
   .navImage {
     display: flex;
     justify-content: center;
-    align-items:center;
-    color:#fff;
+    align-items: center;
+    color: #fff;
     img {
       width: 20px;
       margin: 0 0.3rem;
@@ -40,9 +41,9 @@ const Snavbar = styled.nav`
     justify-content: center;
   }
   .navSearch {
-    a{
+    a {
       padding: 0 1rem;
-      border-left:3px solid #fff;
+      border-left: 3px solid #fff;
     }
   }
   .active {

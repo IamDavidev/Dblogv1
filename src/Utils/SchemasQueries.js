@@ -1,6 +1,8 @@
 import { gql } from '@apollo/client';
 
-export const SqueryPosts = gql`
+export const URI_BACKEND = 'https://dblogdb.herokuapp.com';
+
+export const GET_QUERY_ALL_POSTS = gql`
   query {
     posts {
       data {
@@ -9,15 +11,6 @@ export const SqueryPosts = gql`
           title
           content
           date
-          description
-          categories {
-            data {
-              id
-              attributes {
-                name
-              }
-            }
-          }
           image {
             data {
               id
@@ -33,3 +26,26 @@ export const SqueryPosts = gql`
   }
 `;
 
+export const GET_QUERY_POSTS = gql`
+  query Post($title: String) {
+    posts(filters: { title: { eq: $title } }) {
+      data {
+        id
+        attributes {
+          title
+          content
+          date
+          image {
+            data {
+              id
+              attributes {
+                name
+                formats
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
