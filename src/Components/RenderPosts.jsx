@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Markdown from 'react-markdown';
-import { GET_QUERY_ALL_POSTS, URI_BACKEND } from '../Utils/SchemasQueries';
+import { GET_QUERY_ALL_POSTS } from '../Utils/SchemasQueries';
 import { useQuery } from '@apollo/client';
 import CardPreView from './cardPreView';
 
@@ -23,7 +23,6 @@ const SrenderPosts = styled.section`
 
 const RenderPosts = () => {
   const { data, loading, error } = useQuery(GET_QUERY_ALL_POSTS);
-  console.log(data);
   return (
     <SrenderPosts>
       <div className="allPosts">

@@ -22,8 +22,9 @@ export const AppTheme = {
     ext: '#232B59',
     black: '#0C0B13',
     blue: '#234BA8',
-    green:"#16D896",
-    rosee:'#CC21A3'
+    green: '#16D896',
+    rosee: '#CC21A3',
+    aqua: '  #00ffff',
   },
 };
 
