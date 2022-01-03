@@ -20,7 +20,6 @@ export const GET_QUERY_ALL_POSTS = gql`
     }
   }
 `;
-
 export const GET_QUERY_POSTS = gql`
   query Post($title: String) {
     posts(filters: { title: { eq: $title } }) {
@@ -91,3 +90,17 @@ export const GET_QUERY_TYPE = gql`
     }
   }
 `;
+export const GET_QUERY_POST_SEARCH = gql`
+  query Post($title: String){
+    posts(filters:{title:{contains:$title}}){
+      data{
+        id
+        attributes{
+          title
+          Description
+          Image
+        }
+      }
+    }
+  }
+`

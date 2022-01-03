@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <main>
         <Routes>
-          <Route path="/" element={<Navigate replace to="/dblog" />} />
+          <Route path="/" element={<Navigate replace to="/dblog/posts" />} />
           <Route path="/dblog/posts" element={<Dblog />} />
           <Route path="dblog/about" element={<About />} />
           <Route path="dblog/post/:title" element={<Post />} />

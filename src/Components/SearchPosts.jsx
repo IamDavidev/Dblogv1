@@ -1,22 +1,22 @@
-import { useQuery } from '@apollo/client';
-import { useState } from 'react';
-import { GET_QUERY_ALL_POSTS } from '../Utils/SchemasQueries';
 
+import { useState } from 'react';
+import CardSearch from './CardSearch';
 const SearchPosts = () => {
-  const [posts, setPosts] = useState([]);
-  const { data } = useQuery(GET_QUERY_ALL_POSTS);
-  if (data) {
-    data.posts.data.forEach((posts) => {
-      console.log(posts);
-      const { title, Image } = posts.attributes;
-    //   setPosts((prevPosts) => [...prevPosts, { title, Image }]);
-      //   setPosts((pre) => [...pre, posts]);
-    });
-  }
-  console.log(data);
+  const [search, setSearch] = useState('@$%');
+  const HandleSearch = (evt) => {
+    evt.preventDefault();
+    const search = evt.target.value || '  ';
+    setSearch(search);
+  };
   return (
     <>
-      <h1>Search Posts</h1>
+      <form onSubmit={HandleSearch}>
+        <label>
+          <input type="text=" onChange={HandleSearch} />
+        </label>
+        <button type="submit">search</button>
+      </form>
+      <CardSearch search={search}/>
     </>
   );
 };
