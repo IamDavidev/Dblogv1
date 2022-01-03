@@ -4,6 +4,7 @@ import Markdown from 'react-markdown';
 import { GET_QUERY_ALL_POSTS } from '../Utils/SchemasQueries';
 import { useQuery } from '@apollo/client';
 import CardPreView from './cardPreView';
+import Loading from './Loading';
 
 const SrenderPosts = styled.section`
   .allPosts {
@@ -21,20 +22,21 @@ const SrenderPosts = styled.section`
   }
 `;
 
-const RenderPosts = () => {
-  const { data, loading, error } = useQuery(GET_QUERY_ALL_POSTS);
+const RenderPosts = ({ data, loading, error }) => {
+ 
   return (
     <SrenderPosts>
       <div className="allPosts">
         <h1>Posts</h1>
       </div>
+      {loading && <Loading />}
       {data &&
         data.posts.data.map((post) => {
           const title = post.attributes.title;
           const LinkTitle = title.replace(/\s/g, '-');
           return (
             <div className="containerPosts" key={post.attributes.title}>
-              <Link to={`/dblog/${LinkTitle}`}>
+              <Link to={`/dblog/post/${LinkTitle}`}>
                 <>
                   <CardPreView
                     title={post.attributes.title}

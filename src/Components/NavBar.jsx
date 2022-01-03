@@ -3,7 +3,7 @@ import dblognav from '../../assets/dblognav.svg';
 import { NavLink } from 'react-router-dom';
 import { AppTheme } from '../mainStyled';
 const Snavbar = styled.nav`
-  border-radius: 50px;
+  border-radius: 3rem;
   background: #6183ab;
   box-shadow: 20px 20px 60px #526f91, -20px -20px 60px #7097c5;
   margin:1rem 0;
@@ -31,6 +31,7 @@ const Snavbar = styled.nav`
     justify-content: center;
     align-items: center;
     color: #fff;
+    padding:1rem;
     img {
       width: 20px;
       margin: 0 0.3rem;
@@ -64,16 +65,16 @@ const Navbar = () => {
           <div className="navLinks">
             <ul>
               <li>
-                <NavLink to="/dblog">Home</NavLink>
+                <NavLink to="/dblog/posts">Home</NavLink>
               </li>
               <li>
-                <NavLink to="/about">About</NavLink>
+                <NavLink to="dblog/about">About</NavLink>
               </li>
             </ul>
           </div>
           <div className="navSearch">
             <label>
-              <NavLink to="/search">Search</NavLink>
+              <NavLink to="dblog/search">Search</NavLink>
             </label>
           </div>
         </div>

@@ -47,3 +47,47 @@ export const GET_QUERY_POSTS = gql`
     }
   }
 `;
+export const GET_QUERY_ALL_TYPES = gql`
+  query {
+    types {
+      data {
+        id
+        attributes {
+          name
+          posts{
+            data{
+              id
+              attributes{
+                title
+                Description
+                Image
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+export const GET_QUERY_TYPE = gql`
+  query Type($name: String) {
+    types(filters: { name: { eq: $name } }) {
+      data {
+        id
+        attributes {
+          name
+          posts{
+            data{
+              id
+              attributes{
+                title
+                Description
+                Image
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

@@ -5,26 +5,25 @@ import Markdown from 'react-markdown';
 import { useMemo } from 'react';
 import styled from 'styled-components';
 import { AppTheme } from '../mainStyled';
-import { useNavigate } from 'react-router-dom';
+import Buttonback from '../Components/Burtoonback';
 
 const StyledPost = styled.article`
   margin: 0;
   padding: 1rem;
+  .containerPosts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+  }
   .option {
     width: 100%;
     color: ${AppTheme.colors.rosee};
     display: flex;
     justify-content: space-between;
     align-items: center;
-    button {
-      color: ${AppTheme.colors.rosee};
-      border-radius: 1rem;
-      background: #092a55;
-      box-shadow: 20px 20px 48px #061c39, -20px -20px 48px #0c3871;
-      padding: 1rem;
-      margin: 0;
-      border: none;
-    }
+    margin-bottom: 1rem;
+    
   }
   h1 {
     text-transform: uppercase;
@@ -51,7 +50,7 @@ const StyledPost = styled.article`
       color: ${AppTheme.colors.rosee};
     }
   }
-  strong{
+  strong {
     color: ${AppTheme.colors.aqua};
   }
 `;
@@ -63,19 +62,14 @@ const Post = () => {
       title: title.replaceAll('-', ' '),
     },
   });
-  const navigate = useNavigate();
-  const HandleBack = () => {
-    navigate(-1);
-  };
   return (
     <StyledPost>
       {data &&
         data.posts.data.map((post) => {
-          console.log(post.attributes.Image);
           return (
             <div key={post.id} className="containerPosts">
               <div className="option">
-                <button onClick={HandleBack}>back</button>
+                <Buttonback />
                 <time>
                   {new Date(post.attributes.createdAt).toLocaleDateString()}
                 </time>

@@ -5,6 +5,7 @@ import About from './pages/About';
 import Dblog from './pages/Dblog';
 import Post from './pages/Post';
 import Search from './pages/Search';
+import Type from './pages/Type';
 import { client } from './Utils/Client';
 
 function App() {
@@ -14,10 +15,11 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Navigate replace to="/dblog" />} />
-          <Route path="/dblog" element={<Dblog />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/dblog/:title" element={<Post />} />
-          <Route path="/search" element={<Search />} />
+          <Route path="/dblog/posts" element={<Dblog />} />
+          <Route path="dblog/about" element={<About />} />
+          <Route path="dblog/post/:title" element={<Post />} />
+          <Route path="dblog/search" element={<Search />} />
+          <Route path="dblog/type/:type" element={<Type />} />
         </Routes>
       </main>
     </ApolloProvider>
