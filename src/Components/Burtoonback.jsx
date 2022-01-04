@@ -6,7 +6,7 @@ const StyledBurtoonback = styled.button`
   color: ${AppTheme.colors.aqua};
   background: transparent;
   border:none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
   border-bottom: 1px solid ${AppTheme.colors.rosee};
   padding: 1rem;

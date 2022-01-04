@@ -7,6 +7,7 @@ import {
 import { Link } from 'react-router-dom';
 import { AppTheme } from '../mainStyled';
 import SearchPosts from '../Components/SearchPosts';
+import Loading from '../Components/Loading';
 
 const StyledSearch = styled.section`
   color: #000000;
@@ -27,13 +28,13 @@ const StyledSearch = styled.section`
 `;
 
 const Search = () => {
-  
-  const { data } = useQuery(GET_QUERY_ALL_TYPES);
-  
+  const { data, loading } = useQuery(GET_QUERY_ALL_TYPES);
+
   return (
     <StyledSearch>
       <section className="Types">
         <h1>Types</h1>
+        {loading && <Loading />}
         {data &&
           data.types.data.map((type) => {
             return (

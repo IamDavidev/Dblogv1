@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import { GET_QUERY_POST_SEARCH } from '../Utils/SchemasQueries';
 import styled from 'styled-components';
 import { AppTheme } from '../mainStyled';
+
 const CardStyled = styled.div`
   padding: 1rem;
   margin: 1rem;
@@ -27,13 +28,16 @@ const CardStyled = styled.div`
 `;
 
 const CardSearch = ({ search = '' }) => {
-  const { data } = useQuery(GET_QUERY_POST_SEARCH, {
+  const { data,loading } = useQuery(GET_QUERY_POST_SEARCH, {
     variables: {
       title: search,
     },
   });
   return (
     <CardStyled>
+      {
+        loading && <loading />
+      }
       {data &&
         data.posts.data.map((post) => {
           return (

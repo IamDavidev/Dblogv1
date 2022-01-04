@@ -11,11 +11,11 @@ const cache = new InMemoryCache();
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   graphQLErrors &&
     graphQLErrors.map(({ message, locations, path }) => {
-      console.log(
+      console.error(
         `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
       );
     });
-  networkError && console.log(`[Network error]: ${networkError}`);
+  networkError && console.error(`[Network error]: ${networkError}`);
 });
 
 export const client = new ApolloClient({

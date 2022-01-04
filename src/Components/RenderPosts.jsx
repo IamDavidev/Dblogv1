@@ -23,12 +23,9 @@ const SrenderPosts = styled.section`
 `;
 
 const RenderPosts = ({ data, loading, error }) => {
- 
   return (
     <SrenderPosts>
-      <div className="allPosts">
-        <h1>Posts</h1>
-      </div>
+      <div className="allPosts"></div>
       {loading && <Loading />}
       {data &&
         data.posts.data.map((post) => {
