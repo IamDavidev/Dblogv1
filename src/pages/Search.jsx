@@ -21,7 +21,7 @@ const StyledSearch = styled.section`
       color: ${AppTheme.colors.green};
       font-weight: bold;
       cursor: pointer;
-      border-bottom: 1px solid ${AppTheme.colors.rosee};
+      border-bottom: 2px solid #000;
     }
   }
 `;
@@ -32,7 +32,6 @@ const Search = () => {
   
   return (
     <StyledSearch>
-      <h1>search posts </h1>
       <section className="Types">
         <h1>Types</h1>
         {data &&

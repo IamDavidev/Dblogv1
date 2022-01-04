@@ -3,13 +3,9 @@ import dblog from '../../assets/dblog.svg';
 import { AppTheme } from '../mainStyled';
 import { URI_BACKEND } from '../Utils/SchemasQueries';
 const StyeleCardPreView = styled.section`
-  border-radius: 2rem;
-  backdrop-filter: blur(5px);
-  background-color: rgba(0, 191, 255, 0.075);
-  box-shadow: rgb(0 0 0 / 30%) 2px 8px 8px;
-  border: 0px rgba(255, 255, 255, 0.4) solid;
-  border-bottom: 0px rgba(40, 40, 40, 0.35) solid;
-  border-right: 0px rgba(40, 40, 40, 0.35) solid;
+  border-radius: 1rem;
+  background: #6183ab;
+  box-shadow: inset 20px 20px 12px #526f91, inset -20px -20px 12px #7097c5;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -27,14 +23,14 @@ const StyeleCardPreView = styled.section`
     text-align: center;
     text-transform: uppercase;
     padding: 0;
-    margin:0;
-    margin-top:1rem;
+    margin: 0;
+    margin-top: 1rem;
     color: ${AppTheme.colors.green};
-    font-weight:bold;
+    font-weight: bold;
   }
-  p{
+  p {
     color: ${AppTheme.colors.black};
-    font-weight:bold;
+    font-weight: bold;
   }
 `;
 
@@ -47,7 +43,6 @@ const CardPreView = ({ title, imgSrc, description }) => {
         {description.length > 50
           ? description.substring(0, 50) + '...'
           : description}
-         
       </p>
     </StyeleCardPreView>
   );

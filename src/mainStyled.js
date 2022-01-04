@@ -41,17 +41,19 @@ export const AppContainer = styled.section`
   margin: 0;
   padding: 0;
   main {
-    margin: 1rem;
+    /* margin: 1rem; */
     padding: 1rem;
     color: #fff;
     border-radius: 1.3rem;
     min-height: 600px;
     min-width: 300px;
-    background: #092a55;
-    box-shadow: inset -25px -25px 100px #08264d, inset 25px 25px 100px #0a2e5d;
+    /* background: #092a55;
+    box-shadow: inset -25px -25px 100px #08264d, inset 25px 25px 100px #0a2e5d; */
   }
   h1 {
     width: 100%;
     text-align: center;
+    margin:0;
+    padding:0;
   }
 `;

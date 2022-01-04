@@ -10,6 +10,9 @@ import Buttonback from '../Components/Burtoonback';
 const StyledPost = styled.article`
   margin: 0;
   padding: 1rem;
+  background: #6183ab;
+  box-shadow: inset 20px 20px 12px #526f91, inset -20px -20px 12px #7097c5;
+  border-radius: 1rem;
   .containerPosts {
     display: flex;
     flex-direction: column;
@@ -18,12 +21,18 @@ const StyledPost = styled.article`
   }
   .option {
     width: 100%;
-    color: ${AppTheme.colors.rosee};
+    border: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
-    
+    time {
+      color: #0ff;
+      border: none;
+      border-bottom: 1px solid ${AppTheme.colors.rosee};
+      padding: 1rem;
+      letter-spacing: 0.2rem;
+    }
   }
   h1 {
     text-transform: uppercase;
