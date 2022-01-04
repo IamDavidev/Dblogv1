@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import dblog from '../../assets/dblog.svg';
 import { AppTheme } from '../mainStyled';
-import { URI_BACKEND } from '../Utils/SchemasQueries';
 const StyeleCardPreView = styled.section`
   border-radius: 1rem;
   background: #6183ab;
@@ -21,7 +20,7 @@ const StyeleCardPreView = styled.section`
   }
   h1 {
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
     padding: 0;
     margin: 0;
     margin-top: 1rem;
@@ -31,6 +30,15 @@ const StyeleCardPreView = styled.section`
   p {
     color: ${AppTheme.colors.black};
     font-weight: bold;
+  }
+  @media (min-width:1000px) {
+    margin:1rem;
+    display:grid;
+    img{
+      width:20rem;
+      height:20rem;
+      object-fit:cover;
+    }
   }
 `;
 

@@ -52,6 +52,9 @@ const Snavbar = styled.nav`
     /* color: #fff; */
     color: ${AppTheme.colors.green};
   }
+  @media (min-width: 1000px) {
+    min-width: 30rem;
+  }
 `;
 
 const Navbar = () => {

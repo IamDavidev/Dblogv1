@@ -44,6 +44,7 @@ const StyledPost = styled.article`
     width: 60%;
     object-fit: cover;
     height: auto;
+    border-radius: 3rem;
   }
   .imgPost {
     width: 100%;

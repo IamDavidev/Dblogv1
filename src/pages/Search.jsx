@@ -25,6 +25,14 @@ const StyledSearch = styled.section`
       border-bottom: 2px solid #000;
     }
   }
+  @media(min-width: 1000px) {
+    margin:0 10rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    
+  }
 `;
 
 const Search = () => {

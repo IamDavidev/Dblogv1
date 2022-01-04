@@ -20,6 +20,15 @@ const SrenderPosts = styled.section`
       cursor: pointer;
     }
   }
+  @media (min-width: 1000px) {
+    .RenderPosts {
+      display:grid;
+      grid-template-columns: 1fr 1fr ;
+      grid-gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `;
 
 const RenderPosts = ({ data, loading, error }) => {
@@ -27,24 +36,26 @@ const RenderPosts = ({ data, loading, error }) => {
     <SrenderPosts>
       <div className="allPosts"></div>
       {loading && <Loading />}
-      {data &&
-        data.posts.data.map((post) => {
-          const title = post.attributes.title;
-          const LinkTitle = title.replace(/\s/g, '-');
-          return (
-            <div className="containerPosts" key={post.attributes.title}>
-              <Link to={`/dblog/post/${LinkTitle}`}>
-                <>
-                  <CardPreView
-                    title={post.attributes.title}
-                    imgSrc={post.attributes.Image}
-                    description={post.attributes.Description}
-                  />
-                </>
-              </Link>
-            </div>
-          );
-        })}
+      <div className="RenderPosts">
+        {data &&
+          data.posts.data.map((post) => {
+            const title = post.attributes.title;
+            const LinkTitle = title.replace(/\s/g, '-');
+            return (
+              <div className="containerPosts" key={post.attributes.title}>
+                <Link to={`/dblog/post/${LinkTitle}`}>
+                  <>
+                    <CardPreView
+                      title={post.attributes.title}
+                      imgSrc={post.attributes.Image}
+                      description={post.attributes.Description}
+                    />
+                  </>
+                </Link>
+              </div>
+            );
+          })}
+      </div>
     </SrenderPosts>
   );
 };

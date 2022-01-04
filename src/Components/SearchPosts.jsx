@@ -3,10 +3,15 @@ import CardSearch from './CardSearch';
 import styled from 'styled-components';
 
 const StyledSearch = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   input {
-    width: 100%;
+    width: 80%;
     border: none;
-    border-radius:1rem;
+    border-radius: 1rem;
     background: #6183ab;
     box-shadow: 20px 20px 60px #526f91, -20px -20px 60px #7097c5;
     font-size: 1.3rem;
@@ -17,6 +22,12 @@ const StyledSearch = styled.div`
     ::placeholder {
       color: #00ffff;
       text-transform: uppercase;
+    }
+  }
+  @media (min-width: 1000px) {
+    input {
+      width: 80%;
+      margin: 0 auto;
     }
   }
 `;
@@ -30,16 +41,20 @@ const SearchPosts = () => {
   };
   return (
     <StyledSearch>
-      <form onSubmit={HandleSearch}>
-        <label>
-          <input
-            type="text="
-            onChange={HandleSearch}
-            placeholder="search post ..."
-          />
-        </label>
-      </form>
-      <CardSearch search={search} />
+      <div className="inputSerch">
+        <form onSubmit={HandleSearch}>
+          <label>
+            <input
+              type="text="
+              onChange={HandleSearch}
+              placeholder="search post ..."
+            />
+          </label>
+        </form>
+      </div>
+      <div className="renderPosts">
+        <CardSearch search={search} />
+      </div>
     </StyledSearch>
   );
 };

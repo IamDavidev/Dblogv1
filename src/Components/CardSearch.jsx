@@ -2,10 +2,19 @@ import { useQuery } from '@apollo/client';
 import { GET_QUERY_POST_SEARCH } from '../Utils/SchemasQueries';
 import styled from 'styled-components';
 import { AppTheme } from '../mainStyled';
-
+import { Link } from 'react-router-dom';
+import Loading from './Loading';
 const CardStyled = styled.div`
   padding: 1rem;
   margin: 1rem;
+  a{
+    text-decoration: none;
+    color:#000
+    cursor: pointer;
+  }
+  p{
+    color:#000;
+  }
   img {
     width: 100px;
     height: 80px;
@@ -13,6 +22,7 @@ const CardStyled = styled.div`
   }
   h1 {
     color: ${AppTheme.colors.aqua};
+    text-transform: capitalize;
   }
   .RenderPost {
     margin: 1rem;
@@ -23,33 +33,44 @@ const CardStyled = styled.div`
     .container {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+    }
+  }
+  @media (min-width: 1000px) {
+    .RenderPost {
+      margin: 1rem;
     }
   }
 `;
 
 const CardSearch = ({ search = '' }) => {
-  const { data,loading } = useQuery(GET_QUERY_POST_SEARCH, {
+  const { data, loading } = useQuery(GET_QUERY_POST_SEARCH, {
     variables: {
       title: search,
     },
   });
   return (
     <CardStyled>
-      {
-        loading && <loading />
-      }
+      {loading && <Loading />}
       {data &&
         data.posts.data.map((post) => {
+          const title = post.attributes.title;
+          const LinkTitle = title.replace(/\s/g, '-');
           return (
-            <div className="RenderPost" key={post.attributes.title}>
-              <div className="container">
-                <img src={post.attributes.Image} alt={post.attributes.title} />
-                <h1>{post.attributes.title}</h1>
+            <Link to={`/dblog/post/${LinkTitle}`} key={post.attributes.title}>
+              <div className="RenderPost" >
+                <div className="container">
+                  <img
+                    src={post.attributes.Image}
+                    alt={post.attributes.title}
+                  />
+                  <h1>{post.attributes.title}</h1>
+                </div>
+                <div className="description">
+                  <p>{post.attributes.Description}</p>
+                </div>
               </div>
-              <div className="description">
-                <p>{post.attributes.Description}</p>
-              </div>
-            </div>
+            </Link>
           );
         })}
     </CardStyled>
