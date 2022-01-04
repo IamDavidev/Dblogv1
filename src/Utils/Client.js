@@ -1,12 +1,24 @@
 import { ApolloClient, HttpLink, from, InMemoryCache } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
-import {URI_BACKEND} from './SchemasQueries'
+import { URI_BACKEND } from './SchemasQueries';
 
 const httpLink = new HttpLink({
   uri: `${URI_BACKEND}/graphql`,
 });
 
-const cache = new InMemoryCache();
+const cache = new InMemoryCache({
+  typePolicies: {
+    Query: {
+      fields: {
+        posts: {
+          merge(existing, incoming,{mergeObjects}) {
+            return mergeObjects(existing, incoming);
+          },
+        },
+      },
+    },
+  },
+});
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   graphQLErrors &&
@@ -22,4 +34,3 @@ export const client = new ApolloClient({
   link: from([errorLink, httpLink]),
   cache,
 });
-

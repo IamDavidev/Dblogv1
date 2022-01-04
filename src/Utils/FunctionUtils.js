@@ -1,8 +1,6 @@
-import { GET_QUERY_POST_SEARCH } from './SchemasQueries';
-export function searchPosts({ query, search }) {
-  const { data } = query(GET_QUERY_POST_SEARCH, {
-    variables: {
-      title: search,
-    },
-  });
-}
+import {client} from './client';
+import {GET_QUERY_POSTS} from './SchemasQueries';
+
+export const cacheData = client.readQuery({
+  query: GET_QUERY_POSTS,
+});

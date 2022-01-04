@@ -58,7 +58,7 @@ const CardSearch = ({ search = '' }) => {
           const LinkTitle = title.replace(/\s/g, '-');
           return (
             <Link to={`/dblog/post/${LinkTitle}`} key={post.attributes.title}>
-              <div className="RenderPost" >
+              <div className="RenderPost">
                 <div className="container">
                   <img
                     src={post.attributes.Image}

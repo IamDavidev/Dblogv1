@@ -1,5 +1,4 @@
 import { gql } from '@apollo/client';
-
 export const URI_BACKEND = 'https://dblogdb.herokuapp.com';
 
 export const GET_QUERY_ALL_POSTS = gql`

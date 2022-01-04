@@ -33,7 +33,6 @@ const StyeleCardPreView = styled.section`
   }
   @media (min-width:1000px) {
     margin:1rem;
-    display:grid;
     img{
       width:20rem;
       height:20rem;
