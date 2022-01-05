@@ -15,7 +15,6 @@ const Dblog = () => {
       })
     );
   }
-  console.log(DataPosts)
   return (
     <>
       <h1>All Posts</h1>
