@@ -1,4 +1,4 @@
-import { client } from './client';
+import { client } from './Client';
 import { GET_QUERY_POSTS } from './SchemasQueries';
 
 export const cacheData = client.readQuery({
