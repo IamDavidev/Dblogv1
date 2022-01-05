@@ -63,6 +63,17 @@ const StyledPost = styled.article`
   strong {
     color: ${AppTheme.colors.aqua};
   }
+  @media(min-width:1000px){
+    margin: 0 6rem;
+    pre{
+      max-width: 95%;
+      padding:1rem;
+      margin:0;
+      code{
+        font-size:1rem;
+      }
+    }
+  }
 `;
 
 const Post = () => {
