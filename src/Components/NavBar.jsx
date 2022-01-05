@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import dblognav from '../../assets/dblognav.svg';
 import { NavLink } from 'react-router-dom';
 import { AppTheme } from '../mainStyled';
 const Snavbar = styled.nav`
   border-radius: 3rem;
   background: #6183ab;
   box-shadow: 20px 20px 60px #526f91, -20px -20px 60px #7097c5;
-  margin:1rem 0;
+  margin: 1rem 0;
   ul {
     display: flex;
   }
@@ -31,7 +30,7 @@ const Snavbar = styled.nav`
     justify-content: center;
     align-items: center;
     color: #fff;
-    padding:1rem;
+    padding: 1rem;
     img {
       width: 20px;
       margin: 0 0.3rem;
@@ -62,7 +61,7 @@ const Navbar = () => {
     <Snavbar>
       <div className="nav">
         <div className="navImage">
-          <img src={dblognav} alt="" />
+          <img src="/assets/dblognav.svg" alt="" />
         </div>
         <div className="navAcess">
           <div className="navLinks">
