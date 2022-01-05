@@ -1,6 +1,8 @@
 import styled from 'styled-components';
-import dblog from '../../assets/dblog.svg';
 import { AppTheme } from '../mainStyled';
+import Markdown from 'react-markdown';
+
+
 const StyeleCardPreView = styled.section`
   border-radius: 1rem;
   background: #6183ab;
@@ -31,12 +33,15 @@ const StyeleCardPreView = styled.section`
     color: ${AppTheme.colors.black};
     font-weight: bold;
   }
-  @media (min-width:1000px) {
-    margin:1rem;
-    img{
-      width:20rem;
-      height:20rem;
-      object-fit:cover;
+  strong{
+    color ${AppTheme.colors.aqua}
+  }
+  @media (min-width: 1000px) {
+    margin: 1rem;
+    img {
+      width: 20rem;
+      height: 20rem;
+      object-fit: cover;
     }
   }
 `;
@@ -46,11 +51,11 @@ const CardPreView = ({ title, imgSrc, description }) => {
     <StyeleCardPreView>
       <img src={imgSrc} alt={description} />
       <h1>{title} </h1>
-      <p>
-        {description.length > 50
-          ? description.substring(0, 50) + '...'
+      <Markdown>
+        {description.length > 100
+          ? description.substring(0, 10) + '...'
           : description}
-      </p>
+      </Markdown>
     </StyeleCardPreView>
   );
 };

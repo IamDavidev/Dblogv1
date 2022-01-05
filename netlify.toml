@@ -1,10 +1,9 @@
 [build]
-    command = "yarn build"
-    publish = "/dist"
-    base = "/"
+    command = "yarn build" #script para hacer build de la aplicacion
+    publish = "/dist"  # carpeta donde se encuentra el build
+    base = "/" # carpeta base de la aplicacion
 
 [[redirects]]
-    from = "/*"
-    to = "/index.html"
-    status = 200
-    
+    from = "/*" # todos los paths
+    to = "/index.html" # redireccionar a index.html
+    status = 200 # status de la redireccion

@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { AppTheme } from '../mainStyled';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
+import {DataPosts} from '../Utils/FunctionUtils'
+import { useState } from 'react';
 const CardStyled = styled.div`
   padding: 1rem;
   margin: 1rem;
@@ -49,6 +51,7 @@ const CardSearch = ({ search = '' }) => {
       title: search,
     },
   });
+  
   return (
     <CardStyled>
       {loading && <Loading />}

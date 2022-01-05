@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import { useQuery } from '@apollo/client';
-import {
-  GET_QUERY_ALL_TYPES,
-  GET_QUERY_ALL_POSTS,
-} from '../Utils/SchemasQueries';
+import { GET_QUERY_ALL_TYPES } from '../Utils/SchemasQueries';
 import { Link } from 'react-router-dom';
 import { AppTheme } from '../mainStyled';
 import SearchPosts from '../Components/SearchPosts';
 import Loading from '../Components/Loading';
+import { DataTypes } from '../Utils/FunctionUtils';
 
 const StyledSearch = styled.section`
   color: #000000;
@@ -25,19 +23,27 @@ const StyledSearch = styled.section`
       border-bottom: 2px solid #000;
     }
   }
-  @media(min-width: 1000px) {
-    margin:0 10rem;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    
+  @media (min-width: 1000px) {
+    margin: 0 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 const Search = () => {
-  const { data, loading } = useQuery(GET_QUERY_ALL_TYPES);
-
+  const { data, loading, error } = DataTypes || useQuery(GET_QUERY_ALL_TYPES);
+  if (data) {
+    localStorage.setItem(
+      'types',
+      JSON.stringify({
+        data: data,
+        loading: loading,
+        error: error,
+      })
+    );
+  }
   return (
     <StyledSearch>
       <section className="Types">
