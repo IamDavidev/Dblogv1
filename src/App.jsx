@@ -1,13 +1,12 @@
 import { ApolloProvider } from '@apollo/client';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/NavBar';
+import Navbar from './Components/NavBar'
 import About from './pages/About';
 import Dblog from './pages/Dblog';
 import Post from './pages/Post';
 import Search from './pages/Search';
 import Type from './pages/Type';
 import { client } from './Utils/Client';
-
 function App() {
   return (
     <ApolloProvider client={client}>
