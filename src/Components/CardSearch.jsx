@@ -5,8 +5,6 @@ import styled from 'styled-components';
 import { GET_QUERY_POST_SEARCH } from '../Utils/SchemasQueries';
 import { AppTheme } from '../mainStyled';
 import Loading from './Loading';
-import { DataPosts } from '../Utils/FunctionUtils';
-
 
 const CardStyled = styled.div`
   padding: 1rem;
@@ -53,7 +51,7 @@ const CardSearch = ({ search = '' }) => {
       title: search,
     },
   });
-   return (
+  return (
     <CardStyled>
       {loading && <Loading />}
       {data &&

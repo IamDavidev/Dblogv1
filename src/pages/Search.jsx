@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { AppTheme } from '../mainStyled';
 import SearchPosts from '../Components/SearchPosts';
 import Loading from '../Components/Loading';
-import { DataTypes } from '../Utils/FunctionUtils';
 
 const StyledSearch = styled.section`
   color: #000000;
@@ -33,17 +32,8 @@ const StyledSearch = styled.section`
 `;
 
 const Search = () => {
-  const { data, loading, error } = DataTypes || useQuery(GET_QUERY_ALL_TYPES);
-  if (data) {
-    localStorage.setItem(
-      'types',
-      JSON.stringify({
-        data: data,
-        loading: loading,
-        error: error,
-      })
-    );
-  }
+  const { data, loading, error } = useQuery(GET_QUERY_ALL_TYPES);
+
   return (
     <StyledSearch>
       <section className="Types">
