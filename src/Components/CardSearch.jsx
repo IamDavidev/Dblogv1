@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Markdown from 'react-markdown';
 
 import { GET_QUERY_POST_SEARCH } from '../Utils/SchemasQueries';
 import { AppTheme } from '../mainStyled';
@@ -69,7 +70,7 @@ const CardSearch = ({ search = '' }) => {
                   <h1>{post.attributes.title}</h1>
                 </div>
                 <div className="description">
-                  <p>{post.attributes.Description}</p>
+                  <Markdown>{post.attributes.Description}</Markdown>
                 </div>
               </div>
             </Link>

@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_QUERY_POSTS } from '../Utils/SchemasQueries';
 import Markdown from 'react-markdown';
-import { useMemo } from 'react';
 import styled from 'styled-components';
 import { AppTheme } from '../mainStyled';
 import Buttonback from '../Components/Burtoonback';

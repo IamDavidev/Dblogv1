@@ -24,11 +24,10 @@ const StyledSearch = styled.section`
   }
   @media (min-width: 1000px) {
     margin: 0 10rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+      .Types{
+        margin: 2rem auto;
+      }
+    }
 `;
 
 const Search = () => {
