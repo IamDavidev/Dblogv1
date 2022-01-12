@@ -114,7 +114,7 @@ const Form = () => {
       .join('&');
   };
 
-  handleSubmit = (e) => {
+  const handleEnv = (e) => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -126,7 +126,7 @@ const Form = () => {
     e.preventDefault();
   };
 
-  handleChange = (e) => {
+  const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
   return (
@@ -135,7 +135,7 @@ const Form = () => {
         Aquí podrás contactar conmigo si tienes alguna duda o quieres contribuir
         con algun posts.
       </p>
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" data-netlify="true" onSubmit={handleEnv}>
         <div className="info">
           <label>
             <p>Nombre :</p>
