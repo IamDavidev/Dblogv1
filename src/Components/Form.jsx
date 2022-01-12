@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from 'styled-component';
+import React, { useState, useEffect } from 'react';
 
 const StyledForm = styled.footer`
   margin: 4rem 0;
@@ -99,6 +100,35 @@ const StyledForm = styled.footer`
 `;
 
 const Form = () => {
+  const [data, setData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&');
+  };
+
+  handleSubmit = (e) => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...data }),
+    })
+      .then(() => alert('Success!'))
+      .catch((error) => alert(error));
+
+    e.preventDefault();
+  };
+
+  handleChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
   return (
     <StyledForm>
       <p>
@@ -109,18 +139,37 @@ const Form = () => {
         <div className="info">
           <label>
             <p>Nombre :</p>
-            <input type="text" name="name" placeholder="nombre completo" />
+            <input
+              type="text"
+              name="name"
+              placeholder="nombre completo"
+              onChange={handleChange}
+            />
           </label>
 
           <label>
             <p>Email :</p>
-            <input type="email" name="email" placeholder="email " />
+            <input
+              type="email"
+              name="email"
+              placeholder="email "
+              onChange={handleChange}
+            />
           </label>
+          <input
+            type="hidden"
+            name="form-name"
+            value="the-name-of-the-html-form"
+          />
         </div>
         <div className="message">
           <label>
             <p>Mensaje :</p>
-            <textarea name="message" placeholder="message ..." />
+            <textarea
+              name="message"
+              placeholder="message ..."
+              onChange={handleChange}
+            />
           </label>
         </div>
         <div className="buttonEnv">
