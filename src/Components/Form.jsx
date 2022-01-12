@@ -1,4 +1,4 @@
-import styled from 'styled-component';
+import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
 
 const StyledForm = styled.footer`
