@@ -7,6 +7,7 @@ import makdown from '../assets/markdown.svg';
 import heroku from '../assets/heroku-icon.svg';
 import strapi from '../assets/strapi-icon.svg';
 import styledComponents from '../assets/styled-components.png';
+import Form from '../Components/Form';
 
 const StyledAbout = styled.section`
   color: #000;
@@ -95,7 +96,7 @@ const About = () => {
           </p>
         </div>
         <div className="tecnologies">
-          <h3>tecnologias de Dblog</h3>
+          <h3>Tecnologias de Dblog</h3>
           {/* frontend */}
           <h4>
             <>Frontend</>
@@ -136,6 +137,12 @@ const About = () => {
               <img src={heroku} alt="dblog itsdavid heroku" />
             </li>
           </ul>
+        </div>
+        <div className="footerForm">
+          <h1>
+            <span>¿Quieres saber más?</span>
+          </h1>
+          <Form />
         </div>
       </div>
     </StyledAbout>
