@@ -85,6 +85,15 @@ const StyledForm = styled.footer`
       display: flex;
       justify-content: center;
       align-items: center;
+      button {
+        border: none;
+        border-radius: 1rem;
+        background: #6183ab;
+        box-shadow: inset 20px -20px 59px #4e6989, inset -20px 20px 59px #749dcd;
+        padding: 1rem;
+        color: #910505;
+        margin: 1rem 0;
+      }
     }
   }
 `;
@@ -96,7 +105,7 @@ const Form = () => {
         Aquí podrás contactar conmigo si tienes alguna duda o quieres contribuir
         con algun posts.
       </p>
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" data-netlify="true" netlify>
         <div className="info">
           <label>
             <p>Nombre :</p>
