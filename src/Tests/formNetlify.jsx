@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React, { useState, useEffect } from 'react';
 
 const StyledForm = styled.footer`
   margin: 4rem 0;
@@ -85,33 +86,99 @@ const StyledForm = styled.footer`
       display: flex;
       justify-content: center;
       align-items: center;
+      button {
+        border: none;
+        border-radius: 1rem;
+        background: #6183ab;
+        box-shadow: inset 20px -20px 59px #4e6989, inset -20px 20px 59px #749dcd;
+        padding: 1rem;
+        color: #910505;
+        margin: 1rem 0;
+      }
     }
   }
 `;
 
 const Form = () => {
+  const [data, setData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&');
+  };
+
+  const handleEnv = (e) => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...data }),
+    })
+      .then(() => alert('Success!'))
+      .catch((error) => alert(error));
+
+    e.preventDefault();
+  };
+
+  const handleChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
   return (
     <StyledForm>
       <p>
         Aquí podrás contactar conmigo si tienes alguna duda o quieres contribuir
         con algun posts.
       </p>
-      <form name="contact" method="POST" data-netlify="true">
+      <form
+        name="contact"
+        method="POST"
+        netlify
+        data-netlify="true"
+        onSubmit={handleEnv}
+      >
         <div className="info">
           <label>
             <p>Nombre :</p>
-            <input type="text" name="name" placeholder="nombre completo" />
+            <input
+              value={data.name}
+              type="text"
+              name="name"
+              placeholder="nombre completo"
+              onChange={handleChange}
+            />
           </label>
 
           <label>
             <p>Email :</p>
-            <input type="email" name="email" placeholder="email " />
+            <input
+              value={data.email}
+              type="email"
+              name="email"
+              placeholder="email "
+              onChange={handleChange}
+            />
           </label>
+          <input
+            type="hidden"
+            name="form-name"
+            value="the-name-of-the-html-form"
+          />
         </div>
         <div className="message">
           <label>
             <p>Mensaje :</p>
-            <textarea name="message" placeholder="message ..." />
+            <textarea
+              value={data.message}
+              name="message"
+              placeholder="message ..."
+              onChange={handleChange}
+            />
           </label>
         </div>
         <div className="buttonEnv">
