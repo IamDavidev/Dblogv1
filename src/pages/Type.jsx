@@ -16,6 +16,7 @@ const Type = () => {
     <div>
       <Helmet>
         <title>{type} || dblog</title>
+        <meta name="description" content={`${type} dblog`} />
       </Helmet>
       <section className="type">
         <h1>{type}</h1>

@@ -38,6 +38,7 @@ const Search = () => {
     <>
       <Helmet>
         <title>buscar || dblog</title>
+        <meta name="description" content="buscar dblog" />
       </Helmet>
       <StyledSearch>
         <section className="Types">

@@ -76,6 +76,7 @@ const About = () => {
     <>
       <Helmet>
         <title>Sobre dblog </title>
+        <meta name="description" content="Sobre dblog informacion " />
       </Helmet>
       <StyledAbout>
         <div className="header">

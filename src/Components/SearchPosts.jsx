@@ -45,6 +45,7 @@ const SearchPosts = () => {
     <>
       <Helmet>
         <title>{`Search : ${seoSearch} || dblog`}</title>
+        <meta name="description" content={`search posts dblog ${seoSearch}`} />
       </Helmet>
       <StyledSearch>
         <div className="inputSerch">

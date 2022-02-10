@@ -33,6 +33,12 @@ const RenderPosts = ({ data, loading, error }) => {
     <>
       <Helmet>
         <title> posts || dblog</title>
+        <meta name="description" content="posts dblog render" />
+        <meta
+          name="keywords"
+          content="posts, dblog, blog, blog posts, blog dblog"
+        />
+        <meta name="author" content="dblog" />
       </Helmet>
       <SrenderPosts>
         <div className="allPosts"></div>
