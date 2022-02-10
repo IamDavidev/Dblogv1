@@ -11,7 +11,6 @@ const Type = () => {
     variables: { name: type },
   });
 
-  console.log(type);
   return (
     <div>
       <Helmet>

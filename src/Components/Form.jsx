@@ -105,7 +105,7 @@ const Form = () => {
         Aquí podrás contactar conmigo si tienes alguna duda o quieres contribuir
         con algun posts.
       </p>
-      <form name="contact" method="POST" data-netlify="true" netlify>
+      <form name="contact" method="POST" data-netlify="true" netlify="true">
         <div className="info">
           <label>
             <p>Nombre :</p>

@@ -102,7 +102,6 @@ const About = () => {
           </div>
           <div className="tecnologies">
             <h3>Tecnologias de Dblog</h3>
-            {/* frontend */}
             <h4>
               <>Frontend</>
             </h4>
@@ -128,7 +127,6 @@ const About = () => {
                 <img src={graphql} alt="dblog itsdavid graphql" />
               </li>
             </ul>
-            {/* backend */}
             <h4>
               <>Backend</>
             </h4>

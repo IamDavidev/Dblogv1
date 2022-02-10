@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { DataPosts } from '../Utils/FunctionUtils';
 
-// test donde si existe la variable DataPosts usamos un filter 
+// test donde si existe la variable DataPosts usamos un filter
 
 const FilterTest = () => {
-    const [posts, setposts] = useState([]);
+  const [posts, setposts] = useState([]);
   const { data } = DataPosts;
   const handleTests = (evt) => {
     evt.preventDefault();
@@ -16,7 +16,6 @@ const FilterTest = () => {
       )
     );
   };
-  console.log(posts);
   return (
     <>
       <h2>Filter Test</h2>

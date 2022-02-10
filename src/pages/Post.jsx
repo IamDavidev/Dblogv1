@@ -86,7 +86,7 @@ const Post = () => {
     <>
       <Helmet>
         <title>{title.replaceAll('-', ' ')} || dblog</title>
-        <meta name="description" content={data.post.description} />
+        <meta name="description" content="dblog description posts" />
       </Helmet>
       <StyledPost>
         {data &&
