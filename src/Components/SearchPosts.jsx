@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import CardSearch from './CardSearch';
 import styled from 'styled-components';
-
+import { Helmet } from 'react-helmet';
 const StyledSearch = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,28 +34,35 @@ const StyledSearch = styled.div`
 
 const SearchPosts = () => {
   const [search, setSearch] = useState('@$%');
+  const [seoSearch, setSeoSearch] = useState('');
   const HandleSearch = (evt) => {
     evt.preventDefault();
     const search = evt.target.value || '  ';
     setSearch(search);
+    setSeoSearch(search);
   };
   return (
-    <StyledSearch>
-      <div className="inputSerch">
-        <form onSubmit={HandleSearch}>
-          <label>
-            <input
-              type="text="
-              onChange={HandleSearch}
-              placeholder="search post ..."
-            />
-          </label>
-        </form>
-      </div>
-      <div className="renderPosts">
-        <CardSearch search={search} />
-      </div>
-    </StyledSearch>
+    <>
+      <Helmet>
+        <title>{`Search : ${seoSearch} || dblog`}</title>
+      </Helmet>
+      <StyledSearch>
+        <div className="inputSerch">
+          <form onSubmit={HandleSearch}>
+            <label>
+              <input
+                type="text="
+                onChange={HandleSearch}
+                placeholder="search post ..."
+              />
+            </label>
+          </form>
+        </div>
+        <div className="renderPosts">
+          <CardSearch search={search} />
+        </div>
+      </StyledSearch>
+    </>
   );
 };
 

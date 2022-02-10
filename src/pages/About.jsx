@@ -3,11 +3,11 @@ import { AppTheme } from '../mainStyled';
 import react from '../assets/react.svg';
 import graphql from '../assets/graphql.svg';
 import apollo from '../assets/apollostack.svg';
-import makdown from '../assets/markdown.svg';
 import heroku from '../assets/heroku-icon.svg';
 import strapi from '../assets/strapi-icon.svg';
 import styledComponents from '../assets/styled-components.png';
 import Form from '../Components/Form';
+import { Helmet } from 'react-helmet';
 
 const StyledAbout = styled.section`
   color: #000;
@@ -73,79 +73,84 @@ const StyledAbout = styled.section`
 
 const About = () => {
   return (
-    <StyledAbout>
-      <div className="header">
-        <h1>About dblog</h1>
-        <h2>Bienvenido a dblog</h2>
-      </div>
-      <div className="container">
-        <div className="about">
-          <p>
-            dblog es un blog creado con el fin de compartir información sobre
-            <span> desarrollo web</span>,<span> diseño web</span>,
-            <span> programación</span>, etc.
-          </p>
-          <p>
-            otra cosa que se comparte es una serie de tutoriales sobre como
-            empezar en algunas tecnologías :<span> React</span>,
-            <span> Css</span>,<span> Js</span>, etc.
-          </p>
-          <p>
-            También se verán los errores más comunes que me enfrento en mi día a
-            día. Y como llegue a solucionarlos.
-          </p>
+    <>
+      <Helmet>
+        <title>Sobre dblog </title>
+      </Helmet>
+      <StyledAbout>
+        <div className="header">
+          <h1>About dblog</h1>
+          <h2>Bienvenido a dblog</h2>
         </div>
-        <div className="tecnologies">
-          <h3>Tecnologias de Dblog</h3>
-          {/* frontend */}
-          <h4>
-            <>Frontend</>
-          </h4>
-          <ul>
-            <li>
-              <span>React</span>
-              <img src={react} alt="dblog itsdavid react " />
-            </li>
-            <li>
-              <span>Apollo </span>
-              <img src={apollo} alt="dblog itsdavid Apollo" />
-            </li>
-            <li>
-              <span>styled components</span>
-              <img
-                src={styledComponents}
-                alt="dblog itsdavid styled-components"
-              />
-            </li>
+        <div className="container">
+          <div className="about">
+            <p>
+              dblog es un blog creado con el fin de compartir información sobre
+              <span> desarrollo web</span>,<span> diseño web</span>,
+              <span> programación</span>, etc.
+            </p>
+            <p>
+              otra cosa que se comparte es una serie de tutoriales sobre como
+              empezar en algunas tecnologías :<span> React</span>,
+              <span> Css</span>,<span> Js</span>, etc.
+            </p>
+            <p>
+              También se verán los errores más comunes que me enfrento en mi día
+              a día. Y como llegue a solucionarlos.
+            </p>
+          </div>
+          <div className="tecnologies">
+            <h3>Tecnologias de Dblog</h3>
+            {/* frontend */}
+            <h4>
+              <>Frontend</>
+            </h4>
+            <ul>
+              <li>
+                <span>React</span>
+                <img src={react} alt="dblog itsdavid react " />
+              </li>
+              <li>
+                <span>Apollo </span>
+                <img src={apollo} alt="dblog itsdavid Apollo" />
+              </li>
+              <li>
+                <span>styled components</span>
+                <img
+                  src={styledComponents}
+                  alt="dblog itsdavid styled-components"
+                />
+              </li>
 
-            <li>
-              <span>Graphql</span>
-              <img src={graphql} alt="dblog itsdavid graphql" />
-            </li>
-          </ul>
-          {/* backend */}
-          <h4>
-            <>Backend</>
-          </h4>
-          <ul>
-            <li>
-              <span>Strapi</span>
-              <img src={strapi} alt="dblog itsdavid strapi " />
-            </li>
-            <li>
-              <span>Heroku </span>
-              <img src={heroku} alt="dblog itsdavid heroku" />
-            </li>
-          </ul>
+              <li>
+                <span>Graphql</span>
+                <img src={graphql} alt="dblog itsdavid graphql" />
+              </li>
+            </ul>
+            {/* backend */}
+            <h4>
+              <>Backend</>
+            </h4>
+            <ul>
+              <li>
+                <span>Strapi</span>
+                <img src={strapi} alt="dblog itsdavid strapi " />
+              </li>
+              <li>
+                <span>Heroku </span>
+                <img src={heroku} alt="dblog itsdavid heroku" />
+              </li>
+            </ul>
+          </div>
+          <div className="footerForm">
+            <h1>
+              <span>¿Quieres saber más?</span>
+            </h1>
+            <Form />
+          </div>
         </div>
-        <div className="footerForm">
-          <h1>
-            <span>¿Quieres saber más?</span>
-          </h1>
-          <Form />
-        </div>
-      </div>
-    </StyledAbout>
+      </StyledAbout>
+    </>
   );
 };
 

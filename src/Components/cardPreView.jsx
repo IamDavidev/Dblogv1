@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { AppTheme } from '../mainStyled';
 import Markdown from 'react-markdown';
 
-
 const StyeleCardPreView = styled.section`
   border-radius: 1rem;
   background: #6183ab;
@@ -33,8 +32,8 @@ const StyeleCardPreView = styled.section`
     color: ${AppTheme.colors.black};
     font-weight: bold;
   }
-  strong{
-    color ${AppTheme.colors.aqua}
+  strong {
+    color: ${AppTheme.colors.aqua};
   }
   @media (min-width: 1000px) {
     margin: 1rem;

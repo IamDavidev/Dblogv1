@@ -1,6 +1,6 @@
 import { ApolloProvider } from '@apollo/client';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './Components/NavBar'
+import Navbar from './Components/NavBar';
 import About from './pages/About';
 import Dblog from './pages/Dblog';
 import Post from './pages/Post';
@@ -15,10 +15,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate replace to="/dblog/posts" />} />
           <Route path="/dblog/posts" element={<Dblog />} />
-          <Route path="dblog/about" element={<About />} />
-          <Route path="dblog/post/:title" element={<Post />} />
-          <Route path="dblog/search" element={<Search />} />
-          <Route path="dblog/type/:type" element={<Type />} />
+          <Route path="/dblog/sobre" element={<About />} />
+          <Route path="/dblog/post/:title" element={<Post />} />
+          <Route path="/dblog/buscar" element={<Search />} />
+          <Route path="/dblog/tipo/:type" element={<Type />} />
         </Routes>
       </main>
     </ApolloProvider>

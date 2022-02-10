@@ -5,7 +5,7 @@ import Markdown from 'react-markdown';
 import styled from 'styled-components';
 import { AppTheme } from '../mainStyled';
 import Buttonback from '../Components/Burtoonback';
-
+import { Helmet } from 'react-helmet';
 const StyledPost = styled.article`
   margin: 0;
   padding: 1rem;
@@ -62,14 +62,14 @@ const StyledPost = styled.article`
   strong {
     color: ${AppTheme.colors.aqua};
   }
-  @media(min-width:1000px){
+  @media (min-width: 1000px) {
     margin: 0 6rem;
-    pre{
+    pre {
       max-width: 95%;
-      padding:1rem;
-      margin:0;
-      code{
-        font-size:1rem;
+      padding: 1rem;
+      margin: 0;
+      code {
+        font-size: 1rem;
       }
     }
   }
@@ -83,25 +83,30 @@ const Post = () => {
     },
   });
   return (
-    <StyledPost>
-      {data &&
-        data.posts.data.map((post) => {
-          return (
-            <div key={post.id} className="containerPosts">
-              <div className="option">
-                <Buttonback />
-                <time>
-                  {new Date(post.attributes.createdAt).toLocaleDateString()}
-                </time>
+    <>
+      <Helmet>
+        <title>{title.replaceAll('-', ' ')} || dblog</title>
+      </Helmet>
+      <StyledPost>
+        {data &&
+          data.posts.data.map((post) => {
+            return (
+              <div key={post.id} className="containerPosts">
+                <div className="option">
+                  <Buttonback />
+                  <time>
+                    {new Date(post.attributes.createdAt).toLocaleDateString()}
+                  </time>
+                </div>
+                <h1>{post.attributes.title}</h1>
+                <img src={post.attributes.Image} alt="" />
+                <Markdown>{post.attributes.content}</Markdown>
               </div>
-              <h1>{post.attributes.title}</h1>
-              <img src={post.attributes.Image} alt="" />
-              <Markdown>{post.attributes.content}</Markdown>
-            </div>
-          );
-        })}
-      {error && <p>{error.message}</p>}
-    </StyledPost>
+            );
+          })}
+        {error && <p>{error.message}</p>}
+      </StyledPost>
+    </>
   );
 };
 //post.attributes.image.data.attributes.formats.thumbnail.url
