@@ -56,7 +56,7 @@ export const AppContainer = styled.section`
   }
   @media (min-width: 1000px) {
     main{
-      padding:1rem 10rem;
+      padding:1rem;
     }
   }
 `;

@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { AppTheme } from '../mainStyled';
 import Buttonback from '../Components/Burtoonback';
 import { Helmet } from 'react-helmet';
+import Form from '../Components/Form';
 const StyledPost = styled.article`
   margin: 0;
   padding: 1rem;
@@ -62,6 +63,11 @@ const StyledPost = styled.article`
   strong {
     color: ${AppTheme.colors.aqua};
   }
+  .formPost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   @media (min-width: 1000px) {
     margin: 0 6rem;
     pre {
@@ -106,6 +112,9 @@ const Post = () => {
             );
           })}
         {error && <p>{error.message}</p>}
+        <div className="formPost">
+          <Form />
+        </div>
       </StyledPost>
     </>
   );

@@ -103,7 +103,7 @@ const Form = () => {
     <StyledForm>
       <p>
         Aquí podrás contactar conmigo si tienes alguna duda o quieres contribuir
-        con algun posts.
+        con alguna idea.
       </p>
       <form name="contact" method="POST" data-netlify="true" netlify="true">
         <div className="info">
