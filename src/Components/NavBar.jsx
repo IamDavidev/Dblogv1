@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { AppTheme } from '../mainStyled';
 
 const Snavbar = styled.nav`
-  border-radius: 2rem;
+  border-radius: 1rem;
   background: #6183ab;
   box-shadow: 20px 20px 60px #526f91, -20px -20px 60px #7097c5;
   margin: 1rem 0;
